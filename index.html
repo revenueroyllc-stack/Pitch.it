@@ -67,9 +67,37 @@ body::after {
   position:relative; z-index:1;
   height:100vh;
   height:100dvh;
+  min-height: 100vh;
   display:flex;
   flex-direction:column;
   overflow:hidden;
+}
+
+/* ── Force content visible on mobile ── */
+.content {
+  flex:1 !important;
+  overflow-y:auto !important;
+  display:flex !important;
+  flex-direction:column !important;
+  min-height:0 !important;
+}
+
+.tab-panel.active {
+  display:flex !important;
+  flex-direction:column !important;
+  flex:1 !important;
+  overflow-y:auto !important;
+  min-height:200px !important;
+}
+
+.nav {
+  flex-shrink:0 !important;
+  display:flex !important;
+  overflow-x:auto !important;
+}
+
+.nav-tab {
+  flex-shrink:0 !important;
 }
 
 /* ── Mobile fixes ── */
