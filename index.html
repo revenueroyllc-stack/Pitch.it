@@ -2367,6 +2367,29 @@ sb.auth.onAuthStateChange(async (event, session) => {
     document.getElementById('authOverlay').style.display = 'none';
     document.getElementById('userPill').style.display = 'flex';
     document.getElementById('saveIndicator').style.display = 'flex';
+    // Force shell visible
+    document.querySelector('.shell').style.display = 'flex';
+    document.querySelector('.shell').style.flexDirection = 'column';
+    document.querySelector('.shell').style.height = '100vh';
+    document.querySelector('.content').style.display = 'block';
+    document.querySelector('.content').style.flex = '1';
+    document.querySelector('.content').style.overflowY = 'auto';
+    document.querySelector('.content').style.background = '#080808';
+    // Force active tab visible
+    const activePanel = document.querySelector('.tab-panel.active');
+    if (activePanel) {
+      activePanel.style.display = 'block';
+      activePanel.style.minHeight = '400px';
+      activePanel.style.padding = '16px';
+      activePanel.style.color = '#ffffff';
+    }
+    // Force nav visible
+    const nav = document.querySelector('.nav');
+    if (nav) {
+      nav.style.display = 'flex';
+      nav.style.background = '#0f0f0f';
+      nav.style.borderBottom = '1px solid #2a2a2a';
+    }
 
     const email = session.user.email || '';
     document.getElementById('userEmail').textContent = email;
