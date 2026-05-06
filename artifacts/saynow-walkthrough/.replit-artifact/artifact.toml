@@ -1,0 +1,31 @@
+kind = "video"
+previewPath = "/saynow-walkthrough/"
+title = "SayNow Pro Feature Walkthrough"
+version = "1.0.0"
+id = "artifacts/saynow-walkthrough"
+router = "path"
+
+[[integratedSkills]]
+name = "video-js"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/saynow-walkthrough/" ]
+localPort = 25074
+
+[services.development]
+run = "pnpm --filter @workspace/saynow-walkthrough run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/saynow-walkthrough", "run", "build" ]
+publicDir = "artifacts/saynow-walkthrough/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25074"
+BASE_PATH = "/saynow-walkthrough/"

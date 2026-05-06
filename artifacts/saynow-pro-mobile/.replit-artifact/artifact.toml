@@ -1,0 +1,26 @@
+kind = "mobile"
+previewPath = "/mobile/"
+title = "SayNow Pro Mobile"
+version = "1.0.0"
+id = "artifacts/saynow-pro-mobile"
+
+[[integratedSkills]]
+name = "expo"
+version = "1.0.0"
+
+[[services]]
+ensurePreviewReachable = "/status"
+name = "expo"
+paths = [ "/mobile/" ]
+localPort = 20085
+
+[services.development]
+run = "pnpm --filter @workspace/saynow-pro-mobile run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/saynow-pro-mobile", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/saynow-pro-mobile", "run", "serve" ]
+
+[services.env]
+PORT = "20085"
+BASE_PATH = "/mobile/"

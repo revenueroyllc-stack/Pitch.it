@@ -1,0 +1,25 @@
+uploads = []
+
+[[generated]]
+id = "VzahfsMAjRd5jHRJteuE7"
+uri = "file://artifacts/saynow-pro-mobile/assets/images/icon.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "A5jKHXjcUfkkbbni16sXw"
+uri = "file://artifacts/saynow-pro-demo-video/public/images/grid-texture.png"
+type = "image"
+title = "Gold circuit grid texture"
+
+[[generated]]
+id = "q9T0AULLKTwYqv5wpLq24"
+uri = "file://artifacts/saynow-pro-demo-video/public/images/light-leak.png"
+type = "image"
+title = "Gold light leak overlay"
+
+[[outputs]]
+id = "2sLOXTTLRoBYaNettb11S"
+uri = "file://saynow-pro.tar.gz"
+type = "unspecified"
+title = "SayNow Pro — Complete Source Code"

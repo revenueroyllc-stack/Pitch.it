@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>APP_NAME_PLACEHOLDER — Mobile App</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='180' height='180' rx='36' fill='%23080808'/%3E%3Crect x='60' y='40' width='60' height='100' rx='8' fill='%23c9960c'/%3E%3Crect x='70' y='50' width='4' height='80' rx='2' fill='%23080808' opacity='0.6'/%3E%3Crect x='82' y='55' width='4' height='70' rx='2' fill='%23080808' opacity='0.6'/%3E%3Crect x='94' y='60' width='4' height='60' rx='2' fill='%23080808' opacity='0.6'/%3E%3Crect x='106' y='50' width='4' height='80' rx='2' fill='%23080808' opacity='0.6'/%3E%3C/svg%3E" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #080808;
+        color: #e8e8e8;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 20px;
+      }
+
+      .wrapper {
+        max-width: 440px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .logo-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+
+      .logo-icon {
+        width: 52px;
+        height: 52px;
+        background: #111;
+        border: 1px solid #2a2a2a;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 24px rgba(201,150,12,0.2);
+      }
+
+      .logo-text {
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: -0.5px;
+        color: #fff;
+      }
+
+      .logo-text span { color: #c9960c; }
+
+      .tagline {
+        font-size: 13px;
+        color: #555;
+        margin-bottom: 36px;
+        letter-spacing: 0.5px;
+      }
+
+      .card {
+        background: #111;
+        border: 1px solid #222;
+        border-radius: 20px;
+        padding: 28px 24px;
+        margin-bottom: 16px;
+      }
+
+      .card-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 6px;
+      }
+
+      .card-sub {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 22px;
+      }
+
+      .qr-frame {
+        width: 160px;
+        height: 160px;
+        background: #fff;
+        border-radius: 12px;
+        margin: 0 auto 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .qr-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .qr-fallback {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding: 16px;
+      }
+
+      .expo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(201,150,12,0.1);
+        border: 1px solid rgba(201,150,12,0.3);
+        border-radius: 10px;
+        padding: 10px 18px;
+        color: #c9960c;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.15s;
+        word-break: break-all;
+      }
+
+      .expo-link:hover { background: rgba(201,150,12,0.18); }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: left;
+      }
+
+      .step {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: #0d0d0d;
+        border: 1px solid #1e1e1e;
+        border-radius: 12px;
+        padding: 14px;
+      }
+
+      .step-num {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        background: #c9960c;
+        color: #080808;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1px;
+      }
+
+      .step-title { font-size: 13px; font-weight: 700; color: #e8e8e8; margin-bottom: 2px; }
+      .step-desc { font-size: 12px; color: #555; line-height: 1.5; }
+
+      .step-desc code {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 4px;
+        padding: 1px 6px;
+        font-size: 11px;
+        color: #c9960c;
+        font-family: "SF Mono", "Fira Code", monospace;
+      }
+
+      .features {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 4px;
+      }
+
+      .feature-pill {
+        background: #111;
+        border: 1px solid #1e1e1e;
+        border-radius: 20px;
+        padding: 4px 12px;
+        font-size: 11px;
+        color: #555;
+      }
+
+      .footer {
+        font-size: 11px;
+        color: #2a2a2a;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <div class="logo-row">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="4" width="12" height="20" rx="2" fill="#c9960c"/>
+            <rect x="10" y="6" width="2" height="16" rx="1" fill="#080808" opacity="0.5"/>
+            <rect x="14" y="7" width="2" height="14" rx="1" fill="#080808" opacity="0.5"/>
+            <rect x="18" y="6" width="2" height="16" rx="1" fill="#080808" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="logo-text">SayNow <span>Pro</span></div>
+      </div>
+
+      <div class="tagline">Your unfair advantage on every call.</div>
+
+      <div class="card">
+        <div class="card-title">Open on your phone</div>
+        <div class="card-sub">
+          Scan the QR code with your camera to open in Expo Go,
+          or tap the link below directly on your device.
+        </div>
+
+        <div class="qr-frame">
+          <img
+            id="qr-img"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&color=080808&bgcolor=ffffff&data=exp%3A%2F%2FEXPS_URL_PLACEHOLDER%2Fmobile%2F"
+            alt="QR Code — scan to open in Expo Go"
+            onerror="this.style.display='none'; document.getElementById('qr-fallback').style.display='flex';"
+          />
+          <div id="qr-fallback" class="qr-fallback">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9960c" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3M17 14h3M14 17h3"/></svg>
+            <span style="font-size:11px;color:#555;text-align:center;">Use the link below</span>
+          </div>
+        </div>
+
+        <a class="expo-link" href="exp://EXPS_URL_PLACEHOLDER/mobile/">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          exp://EXPS_URL_PLACEHOLDER/mobile/
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="text-align:left;margin-bottom:14px;">How to open</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-title">Install Expo Go</div>
+              <div class="step-desc">Download <strong style="color:#e8e8e8">Expo Go</strong> from the App Store (iOS) or Google Play (Android) — it's free.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-title">Scan or tap the link</div>
+              <div class="step-desc">Use your camera to scan the QR above, or tap the <code>exp://</code> link on your mobile device.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-title">Start coaching</div>
+              <div class="step-desc">Fill in your prospect on the <strong style="color:#e8e8e8">Prep</strong> tab, then tap <strong style="color:#c9960c">Go Live</strong> when your call begins.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features">
+        <span class="feature-pill">Real-time AI coaching</span>
+        <span class="feature-pill">8-second intervals</span>
+        <span class="feature-pill">Objection handling</span>
+        <span class="feature-pill">Post-call debrief</span>
+      </div>
+
+      <div class="footer">BASE_URL_PLACEHOLDER/mobile/</div>
+    </div>
+  </body>
+</html>

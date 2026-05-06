@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --brand-bg: #080808;
+  --brand-gold: #c9960c;
+  --brand-gold-light: #f5d97e;
+  --brand-green: #00c896;
+  --brand-red: #ff4757;
+  --brand-blue: #4a90d9;
+  --font-display: 'Epilogue', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@theme inline {
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-light: var(--brand-gold-light);
+  --color-brand-green: var(--brand-green);
+  --color-brand-red: var(--brand-red);
+  --color-brand-blue: var(--brand-blue);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background-color: var(--brand-bg);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 217, 126, 0.1);
+}
+
+.glass-panel-gold {
+  background: rgba(201, 150, 12, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 217, 126, 0.2);
+}
